@@ -1,0 +1,36 @@
+#include <iostream.h>
+#include "Queue.h"
+
+typedef queue<int> IntQueue;
+void read(int n, int *a) {
+  for(int i = 0; i<n; i++) {
+    cout << "a[" << i << "]= ";
+    cin >> a[i];
+  }
+}
+
+void main() {
+  int arr[100];
+  int n;
+  do {
+    cout << "n= ";
+    cin >> n;
+  } while (n<1 || n>100);
+  read(n, arr);
+  cout << "a<b= ";
+  int a, b;
+  cin >> a >> b;
+  IntQueue q1, q2;
+  for(int i = 0; i<n; i++) {
+    if(arr[i]<a) {
+      cout << arr[i] << " ";
+    }
+    else if(arr[i]<=b) {
+      q1.InsertElem(arr[i]);
+    }
+    else { 
+      q2.InsertElem(arr[i]);
+    }
+  q1.print();
+  q2.print();
+}
